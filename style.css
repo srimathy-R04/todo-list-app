@@ -1,0 +1,275 @@
+/* ==========================
+   CSS VARIABLES
+========================== */
+
+:root{
+    --primary-color:#0d3250;
+    --secondary-color:deeppink;
+    --background-color:#f4f6f9;
+    --card-color:#ffffff;
+    --text-color:#333333;
+    --light-text:#ffffff;
+}
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:var(--background-color);
+    color:var(--text-color);
+    line-height:1.6;
+}
+.slider
+{
+
+    background-size: cover;
+    background-position: center;
+    
+    animation: slidebg 20s infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes slidebg {
+    0%{
+       
+        background-image:url("home1.jpg");
+       
+    }
+    50%{
+    background-image: url("home2.jpg");
+        
+       
+    }
+    100%{
+       background-image: url("home.jpg");
+        
+    }
+    
+}
+
+/* ==========================
+   SKIP LINK
+========================== */
+
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    background-color:var(--primary-color);
+    color:var(--light-text);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+
+    padding:20px 40px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+nav ul{
+    list-style:none;
+
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--secondary-color);
+}
+
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+
+    display:grid;
+    gap:30px;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section{
+    background-color:var(--card-color);
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+section h2{
+    color:var(--primary-color);
+    margin-bottom:15px;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+section:first-of-type{
+    text-align:center;
+}
+
+section:first-of-type p{
+    margin:15px 0;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button{
+    background-color:var(--secondary-color);
+    color:white;
+
+    border:none;
+    border-radius:6px;
+
+    padding:12px 24px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================
+   ARTICLE GRID
+========================== */
+
+article{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:30px;
+    align-items:center;
+}
+
+article img{
+    width:100%;
+    max-width:400px;
+    height:auto;
+
+    border-radius:10px;
+}
+
+article ol{
+    margin-left:20px;
+}
+
+article li{
+    margin-bottom:15px;
+}
+
+article h3{
+    color:var(--primary-color);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background-color:var(--primary-color);
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+    margin-top:30px;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media screen and (max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    article{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    article img{
+        margin:auto;
+    }
+
+    article ol{
+        text-align:left;
+    }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media screen and (max-width:480px){
+
+    header{
+        padding:15px;
+    }
+
+    header h1{
+        font-size:1.5rem;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    section{
+        padding:20px;
+    }
+
+    button{
+        width:100%;
+    }
+}
